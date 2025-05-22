@@ -121,17 +121,6 @@ function Header() {
                                     Compétences
                                 </button>
                             </li>
-                            <li>
-                                <button
-                                    onClick={() => scrollToSection('contact')}
-                                    className={`text-lg px-4 py-2 rounded-md font-medium transition duration-300 ${isActive('contact')
-                                        ? 'text-white bg-transparent shadow-lg'
-                                            : 'text-gray-300 hover:text-white hover:bg-indigo-700'
-                                        }`}
-                                >
-                                    Contact
-                                </button>
-                            </li>
                         </ul>
                     </nav>
 

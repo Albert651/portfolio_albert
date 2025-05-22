@@ -209,15 +209,6 @@ function Header() {
                         </button>
                         <button
                             onClick={() => scrollToSection('contact')}
-                            className={`w-full text-left px-3 py-2 rounded-md text-base font-medium transition duration-300 ${isActive('contact')
-                                    ? 'text-white bg-indigo-600'
-                                    : 'text-gray-300 hover:text-white hover:bg-indigo-700'
-                                }`}
-                        >
-                            Contact
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('contact')}
                             className="mt-3 w-full bg-white text-indigo-800 hover:bg-indigo-100 px-4 py-2 rounded-md text-sm font-medium transition duration-300"
                         >
                             Contactez-moi

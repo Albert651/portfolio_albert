@@ -205,8 +205,8 @@ function SectionRealisation() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
                 <div className="absolute bottom-0 w-full p-4 transform transition-all duration-500">
-                    <h3 className="text-xl font-semibold mb-1 text-zinc-900 font-bold">{project.subtitle}</h3>
-                    <p className="text-zinc-900 font-bold mb-4">{project.title}</p>
+                    <h3 className="text-xl font-semibold mb-1 font-bold">{project.subtitle}</h3>
+                    <p className="font-bold mb-4">{project.title}</p>
 
                     <button
                         onClick={() => setSelectedProject(project)}

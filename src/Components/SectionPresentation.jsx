@@ -103,7 +103,7 @@ function SectionPresentation() {
                         transition={{ duration: 1 }}
                     >
                         <motion.img
-                            src="/Image/Profil.jpg"
+                            src="/Image/Profil2.png"
                             alt="Albert Zafimamandimby"
                             className="rounded-[30px] shadow-lg w-full max-w-md mx-auto"
                             whileHover={{

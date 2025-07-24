@@ -35,7 +35,7 @@ function SectionRealisation() {
             ],
             description: "Pour ce projet CRM, j’ai été en charge du développement de la partie administrateur. L’admin dispose d’une interface complète pour gérer les clients, les tâches, les prospections commerciales, les devis, les documents, ainsi que les interactions. Un module de rapports permet également d’analyser les statistiques des tâches et des campagnes de prospection",
             technologies: ["ReactJs", "Bootstrap5", "Laravel", "MySQL",],
-            link: "https://relation-client.onrender.com/Accueil"
+            link: "https://relation-client.onrender.com/login"
         },
 
         {

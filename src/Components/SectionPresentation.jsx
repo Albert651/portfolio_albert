@@ -9,7 +9,7 @@ function SectionPresentation() {
     const [cvError, setCvError] = useState(false);
 
     // Chemin du CV - essayez ces chemins dans l'ordre
-    const cvPath = process.env.PUBLIC_URL + '/cv/albert_cv.pdf';
+    const cvPath = process.env.PUBLIC_URL + '/cv/AlbertZafCV.pdf';
 
     const handleCVClick = (e) => {
         e.preventDefault();
@@ -31,7 +31,7 @@ function SectionPresentation() {
                     const url = window.URL.createObjectURL(blob);
                     const link = document.createElement('a');
                     link.href = url;
-                    link.download = 'Albert_Zafimamandimby_CV.pdf';
+                    link.download = 'AlbertZafCV.pdf';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
@@ -42,7 +42,7 @@ function SectionPresentation() {
                     // Fallback - essayer le téléchargement direct
                     const link = document.createElement('a');
                     link.href = cvPath;
-                    link.download = 'Albert_Zafimamandimby_CV.pdf';
+                    link.download = 'AlbertZafCV.pdf';
                     link.target = '_blank';
                     document.body.appendChild(link);
                     link.click();

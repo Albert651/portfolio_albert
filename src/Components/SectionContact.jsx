@@ -19,8 +19,7 @@ function SectionContact() {
     const services = [
         'Développement Web',
         'Développement Mobile',
-        'Backend Development',
-        'Frontend Development',
+        'CMS',
         'Autre'
     ];
 

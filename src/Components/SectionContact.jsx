@@ -19,7 +19,6 @@ function SectionContact() {
     const services = [
         'Développement Web',
         'Développement Mobile',
-        'CMS',
         'Autre'
     ];
 
@@ -347,7 +346,7 @@ function SectionContact() {
                             </div>
                             <div>
                                 <h3 className="text-white font-semibold mb-1">Téléphone</h3>
-                                <p className="text-gray-300 text-lg">034 33 464 35</p>
+                                <p className="text-gray-300 text-lg">+261 34 33 464 35</p>
                             </div>
                         </div>
 
@@ -370,7 +369,7 @@ function SectionContact() {
                             <div>
                                 <h3 className="text-white font-semibold mb-1">67Ha</h3>
                                 <p className="text-gray-300 text-lg">
-                                    Antananarivo,<br />
+                                    Antananarivo,
                                     Madagascar
                                 </p>
                             </div>

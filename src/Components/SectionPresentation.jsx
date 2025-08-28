@@ -122,7 +122,7 @@ function SectionPresentation() {
                         <p className="text-2xl md:text-3xl font-semibold">Expériences<br />Professionnelles</p>
                     </div>
                     <div>
-                        <AnimatedCounter to={4} />
+                        <AnimatedCounter to={6} />
                         <p className="text-2xl md:text-3xl font-semibold">Projets<br />complétés</p>
                     </div>
                 </div>

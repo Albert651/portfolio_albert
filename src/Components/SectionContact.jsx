@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, ChevronDown, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 function SectionContact() {
@@ -21,6 +22,17 @@ function SectionContact() {
         'Développement Mobile',
         'Autre'
     ];
+
+    // Vos liens sociaux - Remplacez par vos vraies URLs
+    const socialLinks = {
+        linkedin: "https://www.linkedin.com/in/zaf-albert-3941162b5/", // Remplacez par votre URL LinkedIn
+        whatsapp: "https://wa.me/261343346435", // Votre numéro WhatsApp au format international
+        github: "https://github.com/Albert651" // Remplacez par votre username GitHub
+    };
+
+    const handleSocialClick = (platform) => {
+        window.open(socialLinks[platform], '_blank');
+    };
 
     const handleInputChange = (e) => {
         setFormData({
@@ -89,60 +101,6 @@ function SectionContact() {
         }
     };
 
-    // Méthode 2: Utilisation d'une API backend
-    const sendEmailWithBackend = async () => {
-        try {
-            const response = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    to: 'albertzaf12@gmail.com',
-                    from: formData.email,
-                    replyTo: formData.email,
-                    subject: `Nouveau contact de ${formData.prenom} ${formData.nom} - ${formData.service}`,
-                    html: `
-                        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                            <h2 style="color: #7C3AED;">Nouveau message de contact</h2>
-                            
-                            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                                <h3 style="color: #333; margin-top: 0;">Informations du contact :</h3>
-                                <p><strong>Nom :</strong> ${formData.nom}</p>
-                                <p><strong>Prénom :</strong> ${formData.prenom}</p>
-                                <p><strong>Email :</strong> ${formData.email}</p>
-                                <p><strong>Téléphone :</strong> ${formData.telephone}</p>
-                                <p><strong>Service demandé :</strong> ${formData.service}</p>
-                            </div>
-                            
-                            <div style="background-color: #fff; padding: 20px; border-left: 4px solid #7C3AED;">
-                                <h3 style="color: #333; margin-top: 0;">Message :</h3>
-                                <p style="line-height: 1.6;">${formData.message}</p>
-                            </div>
-                            
-                            <div style="margin-top: 30px; padding: 15px; background-color: #e8f4ff; border-radius: 6px;">
-                                <p style="margin: 0; color: #0066cc; font-size: 14px;">
-                                    <strong>Note :</strong> Vous pouvez répondre directement à cet email. 
-                                    La réponse sera envoyée à ${formData.email}
-                                </p>
-                            </div>
-                        </div>
-                    `
-                })
-            });
-
-            if (response.ok) {
-                return true;
-            } else {
-                console.error('Erreur lors de l\'envoi:', response.statusText);
-                return false;
-            }
-        } catch (error) {
-            console.error('Erreur réseau:', error);
-            return false;
-        }
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -154,8 +112,7 @@ function SectionContact() {
         setSubmitStatus(null);
 
         try {
-            // Choisissez l'une des deux méthodes
-            const success = await sendEmailWithEmailJS(); // ou sendEmailWithBackend()
+            const success = await sendEmailWithEmailJS();
 
             if (success) {
                 setSubmitStatus('success');
@@ -373,6 +330,44 @@ function SectionContact() {
                                     Madagascar
                                 </p>
                             </div>
+                        </div>
+
+                        {/* Réseaux Sociaux */}
+                        <div className="mt-8 pt-8 border-t border-gray-600">
+                            <h3 className="text-white font-semibold mb-6 text-xl">Suivez-moi</h3>
+                            <div className="flex space-x-4">
+                                {/* LinkedIn */}
+                                <button
+                                    onClick={() => handleSocialClick('linkedin')}
+                                    className="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg group"
+                                    title="Visitez mon profil LinkedIn"
+                                >
+                                    <FaLinkedin className="w-6 h-6 text-white group-hover:text-blue-200" />
+                                </button>
+
+                                {/* WhatsApp */}
+                                <button
+                                    onClick={() => handleSocialClick('whatsapp')}
+                                    className="bg-green-600 hover:bg-green-700 p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg group"
+                                    title="Contactez-moi sur WhatsApp"
+                                >
+                                    <FaWhatsapp className="w-6 h-6 text-white group-hover:text-green-200" />
+                                </button>
+
+                                {/* GitHub */}
+                                <button
+                                    onClick={() => handleSocialClick('github')}
+                                    className="bg-gray-700 hover:bg-gray-800 p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg group"
+                                    title="Visitez mon profil GitHub"
+                                >
+                                    <FaGithub className="w-6 h-6 text-white group-hover:text-gray-300" />
+                                </button>
+                            </div>
+
+                            {/* Texte d'encouragement */}
+                            <p className="text-gray-300 text-sm mt-4">
+                                N'hésitez pas à me contacter sur ces plateformes !
+                            </p>
                         </div>
                     </div>
                 </div>

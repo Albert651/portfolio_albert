@@ -82,8 +82,8 @@ function SectionCompetence() {
                   }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="text-4xl mb-3 text-white">
-                  {competence.icon}
+                <div className="text-4xl mb-3 text-white flex justify-center items-center h-16">
+                    {competence.icon}
                 </div>
                 <h3 className="text-white text-xl font-semibold mb-2">{competence.label}</h3>
                 <div className="text-yellow-400 text-lg">

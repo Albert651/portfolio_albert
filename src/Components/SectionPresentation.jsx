@@ -1,21 +1,8 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-=======
 import React, { useState, useEffect } from 'react';
->>>>>>> master
 import { motion } from 'framer-motion';
 import { X, Download, Eye } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import AnimatedReveal from "../Components/AnimatedReveal";
-
-<<<<<<< HEAD
-function SectionPresentation() {
-    const [showCVModal, setShowCVModal] = useState(false);
-    const [cvError, setCvError] = useState(false);
-
-    // Chemin du CV - essayez ces chemins dans l'ordre
-    const cvPath = process.env.PUBLIC_URL + '/cv/AlbertZafCV.pdf';
-=======
 
 function SectionPresentation() {
     const [showCVModal, setShowCVModal] = useState(false);
@@ -62,7 +49,6 @@ function SectionPresentation() {
             console.error('Erreur lors du chargement des données:', error);
         }
     };
->>>>>>> master
 
     const handleCVClick = (e) => {
         e.preventDefault();
@@ -72,37 +58,6 @@ function SectionPresentation() {
 
     const handleDownload = () => {
         try {
-<<<<<<< HEAD
-            // Méthode alternative pour le téléchargement
-            fetch(cvPath)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('CV non trouvé');
-                    }
-                    return response.blob();
-                })
-                .then(blob => {
-                    const url = window.URL.createObjectURL(blob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = 'AlbertZafCV.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    window.URL.revokeObjectURL(url);
-                })
-                .catch(error => {
-                    console.error('Erreur de téléchargement:', error);
-                    // Fallback - essayer le téléchargement direct
-                    const link = document.createElement('a');
-                    link.href = cvPath;
-                    link.download = 'AlbertZafCV.pdf';
-                    link.target = '_blank';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                });
-=======
             if (profileData.cv.startsWith('data:')) {
                 // CV en base64 (uploadé via admin)
                 const link = document.createElement('a');
@@ -142,7 +97,6 @@ function SectionPresentation() {
                         document.body.removeChild(link);
                     });
             }
->>>>>>> master
         } catch (error) {
             console.error('Erreur:', error);
         }
@@ -154,19 +108,13 @@ function SectionPresentation() {
 
     const handleIframeError = () => {
         setCvError(true);
-<<<<<<< HEAD
-        console.error('Impossible de charger le CV depuis:', cvPath);
-=======
         console.error('Impossible de charger le CV depuis:', profileData.cv);
->>>>>>> master
     };
 
     const closeCVModal = () => {
         setShowCVModal(false);
     };
 
-<<<<<<< HEAD
-=======
     // Fonction pour convertir les <br /> en retours à la ligne pour le rendu
     const renderDescription = (description) => {
         return description.split('<br />').map((line, index) => (
@@ -177,7 +125,6 @@ function SectionPresentation() {
         ));
     };
 
->>>>>>> master
     return (
         <>
             <section className="bg-transparent shadow-lg to-blue-900 text-white py-20 px-6 md:px-12 mt-12">
@@ -185,18 +132,6 @@ function SectionPresentation() {
                     <div className="md:w-1/2 space-y-6 text-center md:text-left">
                         <AnimatedReveal>
                             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-<<<<<<< HEAD
-                                Albert<br />
-                                Zafimamandimby
-                            </h1>
-                        </AnimatedReveal>
-                        <AnimatedReveal>
-                            <h2 className="text-2xl font-semibold text-white">Développeur Full Stack</h2>
-                            <p className="text-lg leading-relaxed font-medium">
-                                En tant que développeur web passionné par les technologies innovantes, je m'engage à concevoir des solutions performantes, sécurisées et de haute qualité.<br />
-                                Rigoureux et orienté résultats, je cherche à allier efficacité et impact positif au sein de chaque projet.<br />
-                                Toujours en veille technologique, je m'adapte rapidement aux nouveaux défis pour apporter des solutions optimales.
-=======
                                 {profileData.name.split(' ').map((name, index) => (
                                     <span key={index}>
                                         {name}
@@ -210,7 +145,6 @@ function SectionPresentation() {
                             <h2 className="text-2xl font-semibold text-white">{profileData.title}</h2>
                             <p className="text-lg leading-relaxed font-medium">
                                 {renderDescription(profileData.description)}
->>>>>>> master
                             </p>
                         </AnimatedReveal>
                         <AnimatedReveal delay={0.2}>
@@ -221,10 +155,6 @@ function SectionPresentation() {
                                 <Eye className="w-5 h-5" />
                                 Voir et Télécharger CV
                             </button>
-<<<<<<< HEAD
-=======
-
->>>>>>> master
                         </AnimatedReveal>
                     </div>
 
@@ -235,26 +165,18 @@ function SectionPresentation() {
                         transition={{ duration: 1 }}
                     >
                         <motion.img
-<<<<<<< HEAD
-                            src="/Image/Profil2.png"
-                            alt="Albert Zafimamandimby"
-=======
                             src={profileData.profileImage}
                             alt={profileData.name}
->>>>>>> master
                             className="rounded-[30px] shadow-lg w-full max-w-md mx-auto"
                             whileHover={{
                                 scale: 1.05,
                                 rotate: 1,
                                 transition: { duration: 0.3 },
                             }}
-<<<<<<< HEAD
-=======
                             onError={(e) => {
                                 // Fallback vers l'image par défaut en cas d'erreur
                                 e.target.src = '/Image/Profil2.png';
                             }}
->>>>>>> master
                         />
                     </motion.div>
                 </div>
@@ -262,19 +184,11 @@ function SectionPresentation() {
                 {/* Section des stats */}
                 <div className="mt-16 flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-20 text-center">
                     <div>
-<<<<<<< HEAD
-                        <AnimatedCounter to={3} />
-                        <p className="text-2xl md:text-3xl font-semibold">Expériences<br />Professionnelles</p>
-                    </div>
-                    <div>
-                        <AnimatedCounter to={6} />
-=======
                         <AnimatedCounter to={profileData.stats.experiences} />
                         <p className="text-2xl md:text-3xl font-semibold">Expériences<br />Professionnelles</p>
                     </div>
                     <div>
                         <AnimatedCounter to={profileData.stats.projects} />
->>>>>>> master
                         <p className="text-2xl md:text-3xl font-semibold">Projets<br />complétés</p>
                     </div>
                 </div>
@@ -301,11 +215,7 @@ function SectionPresentation() {
                         <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gradient-to-r from-purple-700 to-blue-500">
                             <h3 className="text-xl font-semibold text-white flex items-center gap-2">
                                 <Eye className="w-5 h-5" />
-<<<<<<< HEAD
-                                Aperçu du CV - Albert Zafimamandimby
-=======
                                 Aperçu du CV - {profileData.name}
->>>>>>> master
                             </h3>
                             <div className="flex items-center gap-2">
                                 <button
@@ -328,15 +238,9 @@ function SectionPresentation() {
                         <div className="h-[calc(90vh-80px)] overflow-auto">
                             {!cvError ? (
                                 <iframe
-<<<<<<< HEAD
-                                    src={cvPath}
-                                    className="w-full h-full"
-                                    title="CV Albert Zafimamandimby"
-=======
                                     src={profileData.cv}
                                     className="w-full h-full"
                                     title={`CV ${profileData.name}`}
->>>>>>> master
                                     style={{ minHeight: '600px' }}
                                     onLoad={handleIframeLoad}
                                     onError={handleIframeError}
@@ -355,11 +259,7 @@ function SectionPresentation() {
                                             Télécharger le CV
                                         </button>
                                         <p className="text-sm mt-4 text-gray-500">
-<<<<<<< HEAD
-                                            Chemin testé: {cvPath}
-=======
                                             Chemin testé: {profileData.cv}
->>>>>>> master
                                         </p>
                                     </div>
                                 </div>
@@ -394,8 +294,4 @@ function SectionPresentation() {
     );
 }
 
-<<<<<<< HEAD
 export default SectionPresentation;
-=======
-export default SectionPresentation;
->>>>>>> master

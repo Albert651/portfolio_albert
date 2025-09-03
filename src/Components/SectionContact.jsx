@@ -27,7 +27,7 @@ function SectionContact() {
     const socialLinks = {
         linkedin: "https://www.linkedin.com/in/zaf-albert-3941162b5/", // Remplacez par votre URL LinkedIn
         whatsapp: "https://wa.me/261343346435", // Votre numéro WhatsApp au format international
-        github: "https://github.com/Albert651" // Remplacez par votre username GitHub
+        github: "https://github.com/Albert" // Remplacez par votre username GitHub
     };
 
     const handleSocialClick = (platform) => {
@@ -375,4 +375,5 @@ function SectionContact() {
         </section>
     );
 }
+
 export default SectionContact;

@@ -174,7 +174,7 @@ function SectionPresentation() {
                         >
                             {/* Cercle décoratif en arrière-plan */}
                             <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full blur-lg opacity-30 scale-110"></div>
-
+                            
                             {/* Image de profil circulaire */}
                             <motion.img
                                 src={profileData.profileImage}
@@ -192,7 +192,7 @@ function SectionPresentation() {
                                     e.target.src = '/Image/Profil2.png';
                                 }}
                             />
-
+                            
                             {/* Ring décoratif animé */}
                             <motion.div
                                 className="absolute inset-0 rounded-full border-2 border-gradient-to-br from-purple-400 to-blue-400"

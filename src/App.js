@@ -10,36 +10,6 @@ import SectionCompetence from './Components/SectionCompetence';
 import SectionContact from './Components/SectionContact';
 import AdminPanel from './Components/AdminPanel';
 
-function App() {
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-
-      {/* Chaque section doit avoir un ID correspondant aux boutons du header */}
-      <section id="accueil">
-        <SectionPresentation />
-      </section>
-
-      <section id="service">
-        <SectiondeTravail />
-      </section>
-
-      <section id="realisation">
-        <SectionRealisation />
-      </section>
-
-      <section id="cv">
-        <SectionCV />
-      </section>
-
-      <section id="competences">
-        <SectionCompetence />
-      </section>
-
-      <section id="contact">
-        <SectionContact />
-      </section>
-
 function AppContent() {
   const location = useLocation();
 
@@ -86,7 +56,6 @@ function AppContent() {
   );
 }
 
-export default App;
 function App() {
   return (
     <Router>

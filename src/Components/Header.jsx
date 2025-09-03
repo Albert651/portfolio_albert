@@ -3,15 +3,15 @@ import React, { useState, useEffect } from 'react';
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('accueil');
+    
 
-    // ✅ On garde une seule version
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     // Fonction pour faire défiler vers une section
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
-            const headerHeight = 80; // Hauteur du header fixe
+            const headerHeight = 80;
             const elementPosition = element.offsetTop - headerHeight;
 
             window.scrollTo({
@@ -116,6 +116,7 @@ function Header() {
                                     Compétences
                                 </button>
                             </li>
+
                         </ul>
                     </nav>
 
@@ -149,7 +150,7 @@ function Header() {
                     </div>
                 </div>
 
-                {/* Menu Mobile avec animation */}
+                {/* Menu Mobile */}
                 <div
                     className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
                         }`}
@@ -206,6 +207,8 @@ function Header() {
                         >
                             Contactez-moi
                         </button>
+                        {/* Bouton Admin Mobile */}
+                        
                     </div>
                 </div>
             </div>

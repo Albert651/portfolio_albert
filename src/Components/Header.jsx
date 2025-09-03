@@ -4,27 +4,18 @@ function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('accueil');
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    // ✅ On garde une seule version
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     // Fonction pour faire défiler vers une section
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
-
             const headerHeight = 80; // Hauteur du header fixe
-            const headerHeight = 80;
             const elementPosition = element.offsetTop - headerHeight;
 
             window.scrollTo({
                 top: elementPosition,
-                behavior: 'smooth'
-            });
-
-            setActiveSection(sectionId);
-            setIsMenuOpen(false); // Fermer le menu mobile après click
                 behavior: 'smooth',
             });
 
@@ -36,10 +27,6 @@ function Header() {
     // Détecter la section active pendant le scroll
     useEffect(() => {
         const handleScroll = () => {
-            const sections = [
-                'accueil', 'service', 'realisation', 'cv', 'competences', 'contact'
-            ];
-
             const sections = ['accueil', 'service', 'realisation', 'cv', 'competences', 'contact'];
             const headerHeight = 100;
             const scrollPosition = window.scrollY + headerHeight;
@@ -89,7 +76,6 @@ function Header() {
                                 <button
                                     onClick={() => scrollToSection('service')}
                                     className={`text-lg px-4 py-2 rounded-md font-medium transition duration-300 ${isActive('service')
-                                        ? 'text-white bg-transparent shadow-lg'
                                             ? 'text-white bg-transparent shadow-lg'
                                             : 'text-gray-300 hover:text-white hover:bg-indigo-700'
                                         }`}
@@ -101,7 +87,6 @@ function Header() {
                                 <button
                                     onClick={() => scrollToSection('realisation')}
                                     className={`text-lg px-4 py-2 rounded-md font-medium transition duration-300 ${isActive('realisation')
-                                        ? 'text-white bg-transparent shadow-lg'
                                             ? 'text-white bg-transparent shadow-lg'
                                             : 'text-gray-300 hover:text-white hover:bg-indigo-700'
                                         }`}
@@ -113,7 +98,6 @@ function Header() {
                                 <button
                                     onClick={() => scrollToSection('cv')}
                                     className={`text-lg px-4 py-2 rounded-md font-medium transition duration-300 ${isActive('cv')
-                                        ? 'text-white bg-transparent shadow-lg'
                                             ? 'text-white bg-transparent shadow-lg'
                                             : 'text-gray-300 hover:text-white hover:bg-indigo-700'
                                         }`}
@@ -125,7 +109,6 @@ function Header() {
                                 <button
                                     onClick={() => scrollToSection('competences')}
                                     className={`text-lg px-4 py-2 rounded-md font-medium transition duration-300 ${isActive('competences')
-                                        ? 'text-white bg-transparent shadow-lg'
                                             ? 'text-white bg-transparent shadow-lg'
                                             : 'text-gray-300 hover:text-white hover:bg-indigo-700'
                                         }`}
@@ -143,7 +126,6 @@ function Header() {
                             aria-label="Ouvrir le menu mobile"
                             className="bg-indigo-800 inline-flex items-center justify-center p-2 rounded-md text-indigo-200 hover:text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-800 focus:ring-white"
                         >
-                            <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <svg
                                 className="h-6 w-6"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -166,9 +148,8 @@ function Header() {
                         </button>
                     </div>
                 </div>
+
                 {/* Menu Mobile avec animation */}
-                <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-                {/* Menu Mobile */}
                 <div
                     className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
                         }`}

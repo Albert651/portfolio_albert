@@ -1,8 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-=======
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
->>>>>>> master
 import './App.css';
 import Header from './Components/Header';
 import SectionPresentation from './Components/SectionPresentation';
@@ -11,7 +8,7 @@ import SectionRealisation from './Components/SectionRealisation';
 import SectionCV from './Components/SectionCv';
 import SectionCompetence from './Components/SectionCompetence';
 import SectionContact from './Components/SectionContact';
-<<<<<<< HEAD
+import AdminPanel from './Components/AdminPanel';
 
 function App() {
   return (
@@ -42,8 +39,6 @@ function App() {
       <section id="contact">
         <SectionContact />
       </section>
-=======
-import AdminPanel from './Components/AdminPanel';
 
 function AppContent() {
   const location = useLocation();
@@ -87,14 +82,11 @@ function AppContent() {
         {/* ⚠️ cette ligne était en double, donc je l'ai supprimée */}
         <Route path="/admin" element={<AdminPanel />} />
       </Routes>
->>>>>>> master
     </div>
   );
 }
 
-<<<<<<< HEAD
 export default App;
-=======
 function App() {
   return (
     <Router>
@@ -104,4 +96,3 @@ function App() {
 }
 
 export default App;
->>>>>>> master

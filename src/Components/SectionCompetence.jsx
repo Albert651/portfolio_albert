@@ -1,19 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import { FaPython, FaJava, FaWordpress, FaMagento, FaPhp, FaLaravel, FaReact } from 'react-icons/fa';
 
 function SectionCompetence() {
     const [filtreNiveau, setFiltreNiveau] = useState("tous");
     const [animatedItems, setAnimatedItems] = useState([]);
 
     const competences = [
-        { label: "Python", niveau: "debutant", domaine: "Backend", stars: 1 },
-        { label: "Java", niveau: "debutant", domaine: "Backend", stars: 1 },
-        { label: "Node.js", niveau: "intermediaire", domaine: "Backend", stars: 3 },
-        { label: "React.js", niveau: "avance", domaine: "Frontend", stars: 4 },
-        { label: "Vue.js", niveau: "intermediaire", domaine: "Frontend", stars: 3 },
-        { label: "Tailwind CSS", niveau: "intermediaire", domaine: "Frontend", stars: 3 },
-        { label: "Flutter", niveau: "intermediaire", domaine: "Mobile", stars: 3 },
-        { label: "PostgreSQL", niveau: "avance", domaine: "Database", stars: 4 },
-        { label: "UML", niveau: "intermediaire", domaine: "Modélisation", stars: 3 }
+        // Débutant
+        { label: "Python", niveau: "debutant", domaine: "Backend", stars: 1, icon: "FaPython" },
+        { label: "Java", niveau: "debutant", domaine: "Backend", stars: 1, icon: "FaJava" },
+        { label: "WordPress", niveau: "debutant", domaine: "CMS", stars: 1, icon: "FaWordpress" },
+        { label: "Magento", niveau: "debutant", domaine: "CMS", stars: 1, icon: "FaMagento" },
+
+        // Intermédiaire
+        { label: "Flutter", niveau: "intermediaire", domaine: "Mobile", stars: 3, icon: "SiFlutter" },
+        { label: "Angular", niveau: "intermediaire", domaine: "Frontend", stars: 3, icon: "FaAngular" },
+        { label: "Next.js", niveau: "intermediaire", domaine: "Frontend", stars: 3, icon: "SiNextdotjs" },
+        { label: "React Native", niveau: "intermediaire", domaine: "Mobile", stars: 3, icon: "FaReact" },
+        { label: "UML", niveau: "intermediaire", domaine: "Modélisation", stars: 3, icon: "FaProjectDiagram" },
+        { label: "MongoDB", niveau: "intermediaire", domaine: "Database", stars: 3, icon: "SiMongodb" },
+
+        // Avancé
+        { label: "PHP", niveau: "avance", domaine: "Backend", stars: 5, icon: "FaPhp" },
+        { label: "Laravel", niveau: "avance", domaine: "Backend", stars: 5, icon: "FaLaravel" },
+        { label: "Symfony", niveau: "avance", domaine: "Backend", stars: 5, icon: "SiSymfony" },
+        { label: "ReactJS", niveau: "avance", domaine: "Frontend", stars: 5, icon: "FaReact" },
+        { label: "VueJS", niveau: "avance", domaine: "Frontend", stars: 5, icon: "FaVuejs" },
+        { label: "HTML & CSS", niveau: "avance", domaine: "Frontend", stars: 5, icon: "FaHtml5" },
+        { label: "Tailwind CSS", niveau: "avance", domaine: "Frontend", stars: 5, icon: "SiTailwindcss" },
+        { label: "Bootstrap", niveau: "avance", domaine: "Frontend", stars: 5, icon: "FaBootstrap" }
     ];
 
     useEffect(() => {
@@ -27,10 +42,7 @@ function SectionCompetence() {
     return (
         <section className="bg-transparent text-white py-20 px-6 md:px-12 mt-10">
             <div className="max-w-6xl mx-auto text-center">
-                {/* Titre */}
                 <h1 className="text-5xl font-bold mb-8 animate-fadeIn">Compétences</h1>
-
-                {/* Description */}
                 <p className="text-lg mb-12 leading-relaxed max-w-3xl mx-auto opacity-90 animate-fadeIn">
                     Explorez mes compétences selon leur niveau de maîtrise :
                 </p>
@@ -64,6 +76,11 @@ function SectionCompetence() {
                                     }`}
                                 style={{ transitionDelay: `${index * 100}ms` }}
                             >
+                                {/* Icône (à intégrer avec React Icons ou autre) */}
+                                <div className="text-4xl mb-3">
+                                    {/* Exemple : <FaReact /> */}
+                                    <span>{competence.icon}</span>
+                                </div>
                                 <h3 className="text-white text-xl font-semibold mb-2">{competence.label}</h3>
                                 <div className="text-yellow-400 text-lg">
                                     {"★".repeat(competence.stars)}{"☆".repeat(5 - competence.stars)}
@@ -76,22 +93,23 @@ function SectionCompetence() {
 
             {/* Animation CSS */}
             <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
 
-        .animate-fadeIn {
-          animation: fadeIn 0.8s ease-out forwards;
-        }
-      `}</style>
+                .animate-fadeIn {
+                    animation: fadeIn 0.8s ease-out forwards;
+                }
+            `}</style>
         </section>
     );
 }
+
 export default SectionCompetence;

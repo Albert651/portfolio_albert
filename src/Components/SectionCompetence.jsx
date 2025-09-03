@@ -94,5 +94,4 @@ function SectionCompetence() {
         </section>
     );
 }
-
 export default SectionCompetence;

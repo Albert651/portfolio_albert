@@ -155,6 +155,7 @@ function SectionPresentation() {
                                 <Eye className="w-5 h-5" />
                                 Voir et Télécharger CV
                             </button>
+
                         </AnimatedReveal>
                     </div>
 

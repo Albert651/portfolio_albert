@@ -376,4 +376,8 @@ function SectionContact() {
     );
 }
 
+<<<<<<< HEAD
 export default SectionContact;
+=======
+export default SectionContact;
+>>>>>>> master

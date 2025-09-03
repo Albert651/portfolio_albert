@@ -3,35 +3,57 @@ import React, { useState, useEffect } from 'react';
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('accueil');
+<<<<<<< HEAD
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+=======
+    
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+>>>>>>> master
 
     // Fonction pour faire défiler vers une section
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
+<<<<<<< HEAD
             const headerHeight = 80; // Hauteur du header fixe
+=======
+            const headerHeight = 80;
+>>>>>>> master
             const elementPosition = element.offsetTop - headerHeight;
 
             window.scrollTo({
                 top: elementPosition,
+<<<<<<< HEAD
                 behavior: 'smooth'
             });
 
             setActiveSection(sectionId);
             setIsMenuOpen(false); // Fermer le menu mobile après click
+=======
+                behavior: 'smooth',
+            });
+
+            setActiveSection(sectionId);
+            setIsMenuOpen(false);
+>>>>>>> master
         }
     };
 
     // Détecter la section active pendant le scroll
     useEffect(() => {
         const handleScroll = () => {
+<<<<<<< HEAD
             const sections = [
                 'accueil', 'service', 'realisation', 'cv', 'competences', 'contact'
             ];
 
+=======
+            const sections = ['accueil', 'service', 'realisation', 'cv', 'competences', 'contact'];
+>>>>>>> master
             const headerHeight = 100;
             const scrollPosition = window.scrollY + headerHeight;
 
@@ -48,7 +70,10 @@ function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+<<<<<<< HEAD
     // Fonction pour déterminer si un lien est actif
+=======
+>>>>>>> master
     const isActive = (sectionId) => activeSection === sectionId;
 
     return (
@@ -81,7 +106,11 @@ function Header() {
                                 <button
                                     onClick={() => scrollToSection('service')}
                                     className={`text-lg px-4 py-2 rounded-md font-medium transition duration-300 ${isActive('service')
+<<<<<<< HEAD
                                         ? 'text-white bg-transparent shadow-lg'
+=======
+                                            ? 'text-white bg-transparent shadow-lg'
+>>>>>>> master
                                             : 'text-gray-300 hover:text-white hover:bg-indigo-700'
                                         }`}
                                 >
@@ -92,7 +121,11 @@ function Header() {
                                 <button
                                     onClick={() => scrollToSection('realisation')}
                                     className={`text-lg px-4 py-2 rounded-md font-medium transition duration-300 ${isActive('realisation')
+<<<<<<< HEAD
                                         ? 'text-white bg-transparent shadow-lg'
+=======
+                                            ? 'text-white bg-transparent shadow-lg'
+>>>>>>> master
                                             : 'text-gray-300 hover:text-white hover:bg-indigo-700'
                                         }`}
                                 >
@@ -103,7 +136,11 @@ function Header() {
                                 <button
                                     onClick={() => scrollToSection('cv')}
                                     className={`text-lg px-4 py-2 rounded-md font-medium transition duration-300 ${isActive('cv')
+<<<<<<< HEAD
                                         ? 'text-white bg-transparent shadow-lg'
+=======
+                                            ? 'text-white bg-transparent shadow-lg'
+>>>>>>> master
                                             : 'text-gray-300 hover:text-white hover:bg-indigo-700'
                                         }`}
                                 >
@@ -114,7 +151,11 @@ function Header() {
                                 <button
                                     onClick={() => scrollToSection('competences')}
                                     className={`text-lg px-4 py-2 rounded-md font-medium transition duration-300 ${isActive('competences')
+<<<<<<< HEAD
                                         ? 'text-white bg-transparent shadow-lg'
+=======
+                                            ? 'text-white bg-transparent shadow-lg'
+>>>>>>> master
                                             : 'text-gray-300 hover:text-white hover:bg-indigo-700'
                                         }`}
                                 >
@@ -131,7 +172,17 @@ function Header() {
                             aria-label="Ouvrir le menu mobile"
                             className="bg-indigo-800 inline-flex items-center justify-center p-2 rounded-md text-indigo-200 hover:text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-800 focus:ring-white"
                         >
+<<<<<<< HEAD
                             <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+=======
+                            <svg
+                                className="h-6 w-6"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+>>>>>>> master
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </button>
@@ -148,8 +199,16 @@ function Header() {
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 {/* Menu Mobile avec animation */}
                 <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+=======
+                {/* Menu Mobile */}
+                <div
+                    className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+                        }`}
+                >
+>>>>>>> master
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         <button
                             onClick={() => scrollToSection('accueil')}
@@ -202,6 +261,11 @@ function Header() {
                         >
                             Contactez-moi
                         </button>
+<<<<<<< HEAD
+=======
+                        {/* Bouton Admin Mobile */}
+                        
+>>>>>>> master
                     </div>
                 </div>
             </div>

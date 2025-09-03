@@ -160,25 +160,55 @@ function SectionPresentation() {
                     </div>
 
                     <motion.div
-                        className="md:w-1/2"
+                        className="md:w-1/2 flex justify-center"
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <motion.img
-                            src={profileData.profileImage}
-                            alt={profileData.name}
-                            className="rounded-[30px] shadow-lg w-full max-w-md mx-auto"
+                        <motion.div
+                            className="relative"
                             whileHover={{
                                 scale: 1.05,
-                                rotate: 1,
                                 transition: { duration: 0.3 },
                             }}
-                            onError={(e) => {
-                                // Fallback vers l'image par défaut en cas d'erreur
-                                e.target.src = '/Image/Profil2.png';
-                            }}
-                        />
+                        >
+                            {/* Cercle décoratif en arrière-plan */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full blur-lg opacity-30 scale-110"></div>
+
+                            {/* Image de profil circulaire */}
+                            <motion.img
+                                src={profileData.profileImage}
+                                alt={profileData.name}
+                                className="relative w-80 h-80 md:w-96 md:h-96 rounded-full object-cover shadow-2xl border-4 border-white/20 backdrop-blur-sm"
+                                style={{
+                                    objectPosition: 'center center'
+                                }}
+                                whileHover={{
+                                    rotate: [0, -2, 2, -1, 1, 0],
+                                    transition: { duration: 0.5 }
+                                }}
+                                onError={(e) => {
+                                    // Fallback vers l'image par défaut en cas d'erreur
+                                    e.target.src = '/Image/Profil2.png';
+                                }}
+                            />
+
+                            {/* Ring décoratif animé */}
+                            <motion.div
+                                className="absolute inset-0 rounded-full border-2 border-gradient-to-br from-purple-400 to-blue-400"
+                                animate={{
+                                    rotate: 360,
+                                }}
+                                transition={{
+                                    duration: 20,
+                                    repeat: Infinity,
+                                    ease: "linear"
+                                }}
+                                style={{
+                                    background: 'conic-gradient(from 0deg, transparent, rgba(168, 85, 247, 0.4), transparent)'
+                                }}
+                            />
+                        </motion.div>
                     </motion.div>
                 </div>
 

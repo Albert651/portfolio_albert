@@ -139,16 +139,19 @@ function SectionContact() {
     };
 
     return (
-        <section className="bg-gradient-to-br shadow-lg to-blue-900 text-white py-20 px-6 md:px-12 mt-10">
+        <section className="bg-gradient-to-br from-gray-900 shadow-lg to-blue-900 text-white py-20 px-6 md:px-12 mt-10">
             <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
                     {/* Section gauche - Formulaire */}
                     <div className="space-y-6">
                         <div className="mb-8">
-                            <h1 className="text-4xl font-bold text-white mb-4">
-                                Unissons nos forces
-                            </h1>
+                            <div className="flex items-center space-x-3 mb-4">
+                                <h1 className="text-4xl font-bold text-white">
+                                    Unissons nos forces
+                                </h1>
+                                {/* Indicateur de disponibilité avec animation */}
+                            </div>
                             <p className="text-lg text-white leading-relaxed">
                                 Je mets à profit mon expérience et je réalise mon travail avec passion afin que l'entreprise et mes collaborateurs puissent avoir confiance en moi.
                                 Ainsi, je suis capable de collaborer,
@@ -296,6 +299,24 @@ function SectionContact() {
 
                     {/* Section droite - Informations de contact */}
                     <div className="space-y-8 lg:pl-8">
+                        {/* Section de disponibilité en haut */}
+                        <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 mb-8">
+                            <div className="flex items-center space-x-3">
+                                <div className="relative">
+                                    <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                                    <div className="absolute inset-0 w-4 h-4 bg-green-500 rounded-full animate-ping opacity-75"></div>
+                                    <div className="absolute inset-0 w-4 h-4 bg-green-400 rounded-full animate-pulse opacity-50"></div>
+                                </div>
+                                <div>
+                                    <h3 className="text-white font-semibold text-lg">Disponible maintenant</h3>
+                                    <p className="text-green-400 text-sm">Réponse rapide garantie</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-300 text-sm mt-3">
+                                Je suis actuellement disponible pour de nouveaux projets et collaborations.
+                            </p>
+                        </div>
+
                         {/* Téléphone */}
                         <div className="flex items-start space-x-4">
                             <div className="bg-purple-600 p-3 rounded-full">
@@ -362,6 +383,14 @@ function SectionContact() {
                                 >
                                     <FaGithub className="w-6 h-6 text-white group-hover:text-gray-300" />
                                 </button>
+                            </div>
+
+                            {/* Indicateur de temps de réponse */}
+                            <div className="mt-6 p-4 bg-green-900/30 border border-green-700 rounded-lg">
+                                <div className="flex items-center space-x-2">
+                                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                    <span className="text-green-400 text-sm font-medium">Temps de réponse moyen: 2-4 heures</span>
+                                </div>
                             </div>
 
                             {/* Texte d'encouragement */}

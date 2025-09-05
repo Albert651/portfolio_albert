@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { X, Download, Eye } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import AnimatedReveal from "../Components/AnimatedReveal";
+import emailjs from '@emailjs/browser';
 
 function SectionPresentation() {
     const [showCVModal, setShowCVModal] = useState(false);
     const [cvError, setCvError] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     const [profileData, setProfileData] = useState({
         name: 'Albert Zafimamandimby',
         title: 'Développeur Full Stack',
@@ -16,8 +18,17 @@ function SectionPresentation() {
         stats: { experiences: 3, projects: 6 }
     });
 
+    // Configuration EmailJS
+    const emailjsConfig = {
+        serviceId: 'service_2x9cgcu',
+        templateId: 'template_95auk0v',
+        publicKey: 'YTEBipvP5PXTjD6Gd'
+    };
+
     useEffect(() => {
         loadProfileData();
+        // Initialiser EmailJS
+        emailjs.init(emailjsConfig.publicKey);
     }, []);
 
     const loadProfileData = () => {
@@ -50,14 +61,66 @@ function SectionPresentation() {
         }
     };
 
+    // Fonction pour envoyer la notification email
+    const sendDownloadNotification = async (userInfo = {}) => {
+        try {
+            const templateParams = {
+                to_name: 'Albert Zafimamandimby',
+                from_name: 'Portfolio Notification System',
+                message: `Quelqu'un a téléchargé votre CV !`,
+                download_time: new Date().toLocaleString('fr-FR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }),
+                user_agent: navigator.userAgent,
+                user_ip: 'Information non disponible côté client',
+                page_url: window.location.href,
+                cv_name: `${profileData.name.replace(/\s+/g, '')}_CV.pdf`,
+                additional_info: `
+Détails du téléchargement:
+- Navigateur: ${navigator.userAgent}
+- Langue: ${navigator.language}
+- Résolution: ${window.screen.width}x${window.screen.height}
+- Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}
+- Referrer: ${document.referrer || 'Accès direct'}
+                `.trim()
+            };
+
+            console.log('Envoi de la notification email...', templateParams);
+
+            const result = await emailjs.send(
+                emailjsConfig.serviceId,
+                emailjsConfig.templateId,
+                templateParams
+            );
+
+            console.log('Email envoyé avec succès!', result);
+            return true;
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi de l\'email:', error);
+            return false;
+        }
+    };
+
     const handleCVClick = (e) => {
         e.preventDefault();
         setShowCVModal(true);
         setCvError(false);
     };
 
-    const handleDownload = () => {
+    const handleDownload = async () => {
+        setIsDownloading(true);
+
         try {
+            // Envoyer la notification email avant le téléchargement
+            console.log('Envoi de la notification...');
+            await sendDownloadNotification();
+
+            // Procéder au téléchargement
             if (profileData.cv.startsWith('data:')) {
                 // CV en base64 (uploadé via admin)
                 const link = document.createElement('a');
@@ -99,6 +162,8 @@ function SectionPresentation() {
             }
         } catch (error) {
             console.error('Erreur:', error);
+        } finally {
+            setIsDownloading(false);
         }
     };
 
@@ -155,7 +220,6 @@ function SectionPresentation() {
                                 <Eye className="w-5 h-5" />
                                 Voir et Télécharger CV
                             </button>
-
                         </AnimatedReveal>
                     </div>
 
@@ -174,7 +238,7 @@ function SectionPresentation() {
                         >
                             {/* Cercle décoratif en arrière-plan */}
                             <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full blur-lg opacity-30 scale-110"></div>
-                            
+
                             {/* Image de profil circulaire */}
                             <motion.img
                                 src={profileData.profileImage}
@@ -192,7 +256,7 @@ function SectionPresentation() {
                                     e.target.src = '/Image/Profil2.png';
                                 }}
                             />
-                            
+
                             {/* Ring décoratif animé */}
                             <motion.div
                                 className="absolute inset-0 rounded-full border-2 border-gradient-to-br from-purple-400 to-blue-400"
@@ -251,10 +315,11 @@ function SectionPresentation() {
                             <div className="flex items-center gap-2">
                                 <button
                                     onClick={handleDownload}
-                                    className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200"
+                                    disabled={isDownloading}
+                                    className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 disabled:cursor-not-allowed text-white rounded-lg transition-colors duration-200"
                                 >
-                                    <Download className="w-4 h-4" />
-                                    Télécharger
+                                    <Download className={`w-4 h-4 ${isDownloading ? 'animate-bounce' : ''}`} />
+                                    {isDownloading ? 'Téléchargement...' : 'Télécharger'}
                                 </button>
                                 <button
                                     onClick={closeCVModal}
@@ -284,10 +349,11 @@ function SectionPresentation() {
                                         <p className="mb-4">Le CV ne peut pas être affiché dans le navigateur.</p>
                                         <button
                                             onClick={handleDownload}
-                                            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-800 hover:to-blue-600 text-white rounded-lg transition-all duration-200 transform hover:scale-105 mx-auto"
+                                            disabled={isDownloading}
+                                            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-800 hover:to-blue-600 disabled:from-purple-400 disabled:to-blue-400 disabled:cursor-not-allowed text-white rounded-lg transition-all duration-200 transform hover:scale-105 mx-auto"
                                         >
-                                            <Download className="w-5 h-5" />
-                                            Télécharger le CV
+                                            <Download className={`w-5 h-5 ${isDownloading ? 'animate-bounce' : ''}`} />
+                                            {isDownloading ? 'Téléchargement...' : 'Télécharger le CV'}
                                         </button>
                                         <p className="text-sm mt-4 text-gray-500">
                                             Chemin testé: {profileData.cv}
@@ -305,10 +371,11 @@ function SectionPresentation() {
                             <div className="flex gap-2">
                                 <button
                                     onClick={handleDownload}
-                                    className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-800 hover:to-blue-600 text-white rounded-lg transition-all duration-200 transform hover:scale-105"
+                                    disabled={isDownloading}
+                                    className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-800 hover:to-blue-600 disabled:from-purple-400 disabled:to-blue-400 disabled:cursor-not-allowed text-white rounded-lg transition-all duration-200 transform hover:scale-105"
                                 >
-                                    <Download className="w-4 h-4" />
-                                    Télécharger CV
+                                    <Download className={`w-4 h-4 ${isDownloading ? 'animate-bounce' : ''}`} />
+                                    {isDownloading ? 'Envoi...' : 'Télécharger CV'}
                                 </button>
                                 <button
                                     onClick={closeCVModal}

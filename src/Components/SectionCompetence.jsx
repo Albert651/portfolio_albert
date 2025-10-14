@@ -14,13 +14,13 @@ function SectionCompetence() {
     const competences = [
         // Débutant
         { label: "Python", niveau: "debutant", domaine: "Backend", stars: 1, icon: <FaPython /> },
-        { label: "Java", niveau: "debutant", domaine: "Backend", stars: 1, icon: <FaJava /> },
         { label: "WordPress", niveau: "debutant", domaine: "CMS", stars: 1, icon: <FaWordpress /> },
         { label: "Magento", niveau: "debutant", domaine: "CMS", stars: 1, icon: <FaMagento /> },
 
         // Intermédiaire
         { label: "Flutter", niveau: "intermediaire", domaine: "Mobile", stars: 3, icon: <SiFlutter /> },
         { label: "Angular", niveau: "intermediaire", domaine: "Frontend", stars: 3, icon: <FaAngular /> },
+             { label: "Java", niveau: "debutant", domaine: "Backend", stars: 1, icon: <FaJava /> },
         { label: "Next.js", niveau: "intermediaire", domaine: "Frontend", stars: 3, icon: <SiNextdotjs /> },
         { label: "React Native", niveau: "intermediaire", domaine: "Mobile", stars: 3, icon: <FaReact /> },
         { label: "UML", niveau: "intermediaire", domaine: "Modélisation", stars: 3, icon: <FaProjectDiagram /> },

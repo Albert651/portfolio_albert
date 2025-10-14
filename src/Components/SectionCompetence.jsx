@@ -16,7 +16,7 @@ function SectionCompetence() {
     { label: "Python", niveau: "debutant", domaine: "Backend", stars: 1, icon: <FaPython /> },
     { label: "WordPress", niveau: "debutant", domaine: "CMS", stars: 1, icon: <FaWordpress /> },
     { label: "Magento", niveau: "debutant", domaine: "CMS", stars: 1, icon: <FaMagento /> },
-
+    
     // Intermédiaire
     { label: "Flutter", niveau: "intermediaire", domaine: "Mobile", stars: 3, icon: <SiFlutter /> },
     { label: "Java", niveau: "debutant", domaine: "Backend", stars: 1, icon: <FaJava /> },

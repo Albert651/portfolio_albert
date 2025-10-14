@@ -19,7 +19,6 @@ function SectionCompetence() {
     
     // Intermédiaire
     { label: "Flutter", niveau: "intermediaire", domaine: "Mobile", stars: 3, icon: <SiFlutter /> },
-    { label: "Java", niveau: "debutant", domaine: "Backend", stars: 1, icon: <FaJava /> },
     { label: "Angular", niveau: "intermediaire", domaine: "Frontend", stars: 3, icon: <FaAngular /> },
     { label: "Next.js", niveau: "intermediaire", domaine: "Frontend", stars: 3, icon: <SiNextdotjs /> },
     { label: "React Native", niveau: "intermediaire", domaine: "Mobile", stars: 3, icon: <FaReact /> },
@@ -27,6 +26,7 @@ function SectionCompetence() {
     { label: "MongoDB", niveau: "intermediaire", domaine: "Database", stars: 3, icon: <SiMongodb /> },
 
     // Avancé
+    { label: "Java", niveau: "avance", domaine: "Backend", stars: 5, icon: <FaJava /> },
     { label: "PHP", niveau: "avance", domaine: "Backend", stars: 5, icon: <FaPhp /> },
     { label: "Laravel", niveau: "avance", domaine: "Backend", stars: 5, icon: <FaLaravel /> },
     { label: "Symfony", niveau: "avance", domaine: "Backend", stars: 5, icon: <SiSymfony /> },

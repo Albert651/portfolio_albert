@@ -79,7 +79,7 @@ function SectionRealisation() {
                 "/Image/Lab4.jpeg",
             ],
             description: "Le projet consiste en une boutique en ligne dédiée à la vente de matériel informatique (ordinateurs, composants, périphériques et accessoires). Le site e-commerce a été conçu pour offrir une navigation fluide, une gestion optimisée des catalogues produits et une expérience d'achat sécurisée, depuis la découverte des articles jusqu'à la finalisation de la commande.",
-            technologies: ["Magento2", "HTML5, CSS3", "JavaScript", "knockout.js", "AJAX", "MySql"],
+            technologies: ["Laravel11", "HTML5, CSS3", "JavaScript", "MySql"],
             link: "https://labservice.awebi-lab.com/"
         },
         {

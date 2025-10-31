@@ -105,7 +105,7 @@ function SectionCV() {
                                 <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:from-gray-700 hover:to-gray-800 border border-gray-700">
                                     <div className="text-white">
                                         <div className="text-lg font-semibold mb-2 opacity-90">
-                                            2020
+                                            2019
                                         </div>
                                         <div className="text-xl font-bold mb-1">
                                             BACCALAUREAT

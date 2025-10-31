@@ -13,21 +13,22 @@ function SectionCompetence() {
 
   const competences = [
     // Débutant
-    { label: "WordPress", niveau: "debutant", domaine: "CMS", stars: 1, icon: <FaWordpress /> },
+  
     { label: "Angular", niveau: "debutant", domaine: "Frontend", stars: 1, icon: <FaAngular /> },
     { label: "React Native", niveau: "debutant", domaine: "Mobile", stars: 1, icon: <FaReact /> },
+    { label: "Magento", niveau: "debutant", domaine: "CMS", stars: 1, icon: <FaMagento /> },
     
     
     // Intermédiaire
     { label: "Flutter", niveau: "intermediaire", domaine: "Mobile", stars: 3, icon: <SiFlutter /> },
     { label: "Python", niveau: "intermediaire", domaine: "Backend", stars: 3, icon: <FaPython /> },
-    { label: "Magento", niveau: "intermediaire", domaine: "CMS", stars: 3, icon: <FaMagento /> },
     { label: "Next.js", niveau: "intermediaire", domaine: "Frontend", stars: 3, icon: <SiNextdotjs /> },
     { label: "UML", niveau: "intermediaire", domaine: "Modélisation", stars: 3, icon: <FaProjectDiagram /> },
     { label: "MongoDB", niveau: "intermediaire", domaine: "Database", stars: 3, icon: <SiMongodb /> },
 
     // Avancé
     { label: "Java", niveau: "avance", domaine: "Backend", stars: 5, icon: <FaJava /> },
+    { label: "WordPress", niveau: "avance", domaine: "CMS", stars: 5, icon: <FaWordpress /> },
     { label: "PHP", niveau: "avance", domaine: "Backend", stars: 5, icon: <FaPhp /> },
     { label: "Laravel", niveau: "avance", domaine: "Backend", stars: 5, icon: <FaLaravel /> },
     { label: "Symfony", niveau: "avance", domaine: "Backend", stars: 5, icon: <SiSymfony /> },

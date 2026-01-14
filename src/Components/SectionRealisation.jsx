@@ -63,8 +63,8 @@ function SectionRealisation() {
                 "/Image/sec3.jpeg",
                 "/Image/sec4.jpeg",
             ],
-            description: "Développement de modules WordPress : conception et intégration de fonctionnalités sur mesure pour répondre aux besoins spécifiques des clients, notamment la gestion des produits, des devis, des promotions et des workflows personnalisés. Personnalisation de thèmes : adaptation complète du design pour correspondre à l'identité visuelle de Sécurlite, amélioration de l'ergonomie et de l'expérience utilisateur sur desktop et mobile. Optimisation des performances : amélioration de la vitesse de chargement, réduction des erreurs et garantie de la compatibilité entre les différents navigateurs. Intégration et maintenance : mise en place de nouvelles fonctionnalités, correction de bugs et suivi des mises à jour WordPress pour assurer la sécurité et la stabilité du site.",
-            technologies: ["Mangeto2", "Bootstrap", "TypeScript", "Angular", "MySQL"],
+            description: "Développement de modules Mangeto : conception et intégration de fonctionnalités sur mesure pour répondre aux besoins spécifiques des clients, notamment la gestion des produits, des devis, des promotions et des workflows personnalisés. Personnalisation de thèmes : adaptation complète du design pour correspondre à l'identité visuelle de Sécurlite, amélioration de l'ergonomie et de l'expérience utilisateur sur desktop et mobile. Optimisation des performances : amélioration de la vitesse de chargement, réduction des erreurs et garantie de la compatibilité entre les différents navigateurs. Intégration et maintenance : mise en place de nouvelles fonctionnalités, correction de bugs et suivi des mises à jour Mangeto pour assurer la sécurité et la stabilité du site.",
+            technologies: ["Mangeto2", "Bootstrap", "Angular", "MySQL"],
             link: "https://securlite.awebi-lab.com/"
         },
         {

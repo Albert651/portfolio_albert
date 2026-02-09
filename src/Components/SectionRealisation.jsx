@@ -97,6 +97,73 @@ function SectionRealisation() {
             technologies: ["ReactJs", "Bootstrap5"],
             link: "https://model-aceuil-albert.onrender.com"
         },
+
+        {
+            id: 7,
+            title: "Site de location de sonorisation",
+            subtitle: "Page d'acceuil",
+            image: "/Image/rent1.1.png",
+            // Ajout d'images pour le carousel
+            additionalImages: [
+                "/Image/rent1.1.png",
+                "/Image/rent1.png",
+                "/Image/rent2.png",
+            ],
+            description: "J’ai participé au développement du projet Rent Sound System, un site de location de matériel de sonorisation à Paris. J’ai travaillé sur l’intégration de la maquette graphique ainsi que sur le développement des différentes fonctionnalités du site.Le projet a été réalisé avec Symfony pour le back-end et Bootstrap pour le design et la mise en page, en veillant à une interface moderne, responsive et facile à utiliser.",
+            technologies: ["Symfony 3.1", "Bootstrap","MySQL"],
+            link: "https://rentsoundsystem.com/"
+        },
+
+        {
+            id: 8,
+            title: "Site Immobilier Plusdimmo",
+            subtitle: "Page d’accueil",
+            image: "/Image/plsd1.png",
+            additionalImages: [
+                "/Image/plsd1.png",
+                "/Image/plsd2.png",
+                "/Image/plsd3.png",
+                "/Image/plsd1.0.png",
+            ],
+            description: "J’ai participé à la réalisation du projet immobilier Plusdimmo, un site dédié à la vente et à la location d’appartements et de maisons sur la Côte d’Azur et en Corse. J’ai travaillé sur l’intégration de la maquette graphique avec Elementor, la personnalisation des sections, ainsi que sur l’implémentation de plusieurs fonctionnalités dynamiques (formulaires, calendrier, animations, cartes interactives). Le site repose sur WordPress avec PHP 8.3, utilise ReactJS et diverses librairies JavaScript (GSAP, Isotope, Chart.js) pour enrichir l’expérience utilisateur, tout en garantissant une interface moderne, responsive et optimisée pour le référencement (SEO).",
+            technologies: [
+                "WordPress",
+                "PHP 8.3",
+                "Elementor",
+                "ReactJS",
+                "JavaScript",
+                "MySQL",
+                "GSAP",
+                "Google Maps",
+                "RankMath SEO"
+            ],
+            link: "https://plusdimmo.com/"
+        },
+        {
+            id: 9,
+            title: "Site Immobilier Madaimmo",
+            subtitle: "Page d’accueil",
+            image: "/Image/mdimmo1.0.png",
+            additionalImages: [
+                "/Image/mdimmo1.0.png",
+                "/Image/mdimmo1.png",
+                "/Image/mdimmo2.png",
+                "/Image/mdimmo3.png",
+            ],
+            description: "J’ai participé à la réalisation du projet immobilier Madaimmo, un site dédié à la vente et à la location d’appartements et de maisons à Madagascar. J’ai travaillé sur l’intégration de la maquette graphique avec Elementor, la personnalisation des sections, ainsi que sur l’implémentation de plusieurs fonctionnalités dynamiques (formulaires, calendrier, animations, cartes interactives). Le site repose sur WordPress avec PHP 8.3, utilise Angular et diverses librairies JavaScript (GSAP, Isotope, Chart.js) pour enrichir l’expérience utilisateur, tout en garantissant une interface moderne, responsive et optimisée pour le référencement (SEO).",
+            technologies: [
+                "WordPress",
+                "PHP 8.3",
+                "Elementor",
+                "Angular",
+                "JavaScript",
+                "MySQL",
+                "GSAP",
+                "Google Maps",
+                "RankMath SEO"
+            ],
+            link: "https://madaimmo.com/"
+        },
         
     ];
 

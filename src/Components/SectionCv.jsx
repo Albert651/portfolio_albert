@@ -20,6 +20,24 @@ function SectionCV() {
                                 <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:from-blue-500 hover:to-purple-500">
                                     <div className="text-white">
                                         <div className="text-lg font-semibold mb-2 opacity-90">
+                                            Juillet 2025-2026
+                                        </div>
+                                        <div className="text-xl font-bold mb-1">
+                                            UPENCY SARL
+                                        </div>
+                                        <div className="text-sm opacity-90">
+                                            Développeur Symfony et WordPress
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </AnimatedReveal>
+                            <AnimatedReveal>
+                            {/* Expérience 2 */}
+                            <div className="group cursor-pointer">
+                                <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:from-blue-500 hover:to-purple-500">
+                                    <div className="text-white">
+                                        <div className="text-lg font-semibold mb-2 opacity-90">
                                             2023-2025
                                         </div>
                                         <div className="text-xl font-bold mb-1">
@@ -33,7 +51,7 @@ function SectionCV() {
                             </div>
                             </AnimatedReveal>
                             <AnimatedReveal>
-                            {/* Expérience 2 */}
+                            {/* Expérience 3 */}
                             <div className="group cursor-pointer">
                                 <div className="bg-gradient-to-r from-indigo-600 to-blue-600 rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:from-indigo-500 hover:to-blue-500">
                                     <div className="text-white">
@@ -51,7 +69,7 @@ function SectionCV() {
                             </div>
                             </AnimatedReveal>
                             <AnimatedReveal>
-                            {/* Expérience 3 */}
+                            {/* Expérience 4 */}
                             <div className="group cursor-pointer">
                                 <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:from-purple-500 hover:to-indigo-500">
                                     <div className="text-white">

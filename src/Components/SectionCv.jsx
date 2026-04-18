@@ -20,7 +20,7 @@ function SectionCV() {
                                 <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:from-blue-500 hover:to-purple-500">
                                     <div className="text-white">
                                         <div className="text-lg font-semibold mb-2 opacity-90">
-                                            Juillet 2025-2026
+                                            Juillet 2025-Février 2026
                                         </div>
                                         <div className="text-xl font-bold mb-1">
                                             UPENCY SARL

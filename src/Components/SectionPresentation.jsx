@@ -81,12 +81,12 @@ function SectionPresentation() {
                 page_url: window.location.href,
                 cv_name: `${profileData.name.replace(/\s+/g, '')}_CV.pdf`,
                 additional_info: `
-Détails du téléchargement:
-- Navigateur: ${navigator.userAgent}
-- Langue: ${navigator.language}
-- Résolution: ${window.screen.width}x${window.screen.height}
-- Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}
-- Referrer: ${document.referrer || 'Accès direct'}
+                Détails du téléchargement:
+                - Navigateur: ${navigator.userAgent}
+                - Langue: ${navigator.language}
+                - Résolution: ${window.screen.width}x${window.screen.height}
+                - Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}
+                - Referrer: ${document.referrer || 'Accès direct'}
                 `.trim()
             };
 

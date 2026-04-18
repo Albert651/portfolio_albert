@@ -6,8 +6,8 @@ const defaultProfileData = {
     title: 'Développeur Full Stack',
     description: 'En tant que développeur web passionné par les technologies innovantes, je m\'engage à concevoir des solutions performantes, sécurisées et de haute qualité.<br />Rigoureux et orienté résultats, je cherche à allier efficacité et impact positif au sein de chaque projet.<br />Toujours en veille technologique, je m\'adapte rapidement aux nouveaux défis pour apporter des solutions optimales.',
     profileImage: '/Image/Profil2.png',
-    cv: '/cv/AlbertZafCV.pdf',
-    stats: { experiences: 3, projects: 6 },
+    cv: '/cv/Albert_Zafimandimby.pdf',
+    stats: { experiences: 4, projects: 9 },
     lastUpdated: null
 };
 
